@@ -21,19 +21,19 @@ Cowlik.Instagram = {};
  *	Params:
  *		@clientID:String - Your Instagram-issued application ID
  */
-Cowlik.Instagram.API = function(clientID) {
-	var base = this;
-	
-	base.BASE_URI = 'https://api.instagram.com/';
-	base.VERSION_URI = 'v1/';
-	base.clientID = clientID;
+Cowlik.Instagram.API = function (clientID) {
+    var base = this;
+
+    base.BASE_URI = 'https://api.instagram.com/';
+    base.VERSION_URI = 'v1/';
+    base.clientID = clientID;
 };
 
 /*
  *	Public Method requestEndpointData
  *
  *	Returns Instagram API endpoint data in JSON format
- *	http://instagram.com/developer/endpoints/
+ *	https://www.instagram.com/developer/endpoints/
  *
  *	Params:
  *		@url:String - URI snippet of the endpoint you are requesting (automatically appended to the BASE_URI string)
@@ -43,16 +43,34 @@ Cowlik.Instagram.API = function(clientID) {
  *		@callback:Function - method called after the endpoint data is successfully retrieved
  *		@opts:Object - collection of additional props/values
  */
-Cowlik.Instagram.API.prototype.requestEndpointData = function(url, callback, opts) {
-	var base = this,
-		reqURL = base.BASE_URI + base.VERSION_URI + url +'?client_id='+ base.clientID +'&callback=?';
-	
-	// check for an absolute URL
-	if (url.substr(0, 4) == 'http') { reqURL = url; }
-	
-	$.get(reqURL, function(data) {
-		callback(data, opts);
-	}, 'jsonp');
+Cowlik.Instagram.API.prototype.requestEndpointData = function (url, callback, opts) {
+    var base = this,
+        reqURL = base.BASE_URI + base.VERSION_URI + url + '&callback=?';
+
+    // check for an absolute URL
+    if (url.substr(0, 4) == 'http') { reqURL = url; }
+
+    $.get(reqURL, function (data) {
+        callback(data, opts);
+    }, 'jsonp');
+};
+
+/*
+ *	Public Method getAccessToken
+ *
+ *	Returns Instagram API access token
+ *	https://www.instagram.com/developer/authentication/
+ *
+ */
+Cowlik.Instagram.API.prototype.getAccessToken = function (redirect) {
+    var base = this,
+        accessToken = '';
+
+    if (window.location.hash) {
+        accessToken = window.location.hash.substr(1);
+    }
+
+    return accessToken;
 };
 
 

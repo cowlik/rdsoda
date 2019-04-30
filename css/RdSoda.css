@@ -102,6 +102,10 @@ body.no-touch-support .trip-marker:hover .marker-label-id,
 	}
 	#modal h4 {
 		width: auto;
+		max-width: 499px;
+		height: auto;
+		line-height: 125%;
+		padding: 10px 15px;
 		color: #666;
 		background-color: #fff;
 		display: inline-block;
@@ -114,6 +118,29 @@ body.no-touch-support .trip-marker:hover .marker-label-id,
 		-ms-transform: translateY(350px);
 		transform: translateY(350px);
 	}
+	#modal h4 a {
+		font-size: 16px;
+		color: #48a170;
+		-webkit-transition: color 0.25s;
+		transition: color 0.25s;
+	}
+		body.no-touch-support #modal h4 a:hover {
+			color: #58c78a;
+		}
+	
+	#modal h4 a.img-rounded {
+		padding: 5px 10px;
+		margin-bottom: 5px;
+		color: #fff;
+		background-color: #48a170;
+		display: inline-block;
+		-webkit-transition: background-color 0.25s;
+		transition: background-color 0.25s;
+	}
+		body.no-touch-support #modal h4 a.img-rounded:hover {
+			color: #fff;
+			background-color: #58c78a;
+		}
 	#modal.error h4 {
 		padding-right: 33px;
 		cursor: pointer;
@@ -560,9 +587,15 @@ a.share-btn:hover {
 		min-height: 505px;
 	}
 	#modal h4 {
+		max-width: 230px;
+		padding: 7px 10px;
+		font-size: 14px;
 		-webkit-transform: translateY(250px);
 		-ms-transform: translateY(250px);
 		transform: translateY(250px);
+	}
+	#modal h4 a {
+		font-size: 14px;
 	}
 		body.supports-3d #modal h4 {
 			-webkit-transform: translate3d(0,250px,0);
