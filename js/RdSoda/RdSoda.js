@@ -17,7 +17,7 @@ RdSoda = {
             isTouchDevice: false
         },
         GoogleMaps: {
-            JS_FILE_PATHS: ['http://maps.googleapis.com/maps/api/js?v=3.15&key=AIzaSyB8rXYk1TYgLCBlCZPTeXoshZa1Uur3m1s',
+            JS_FILE_PATHS: ['http://maps.googleapis.com/maps/api/js?v=3.36&key=AIzaSyB8rXYk1TYgLCBlCZPTeXoshZa1Uur3m1s',
                 'js/GoogleMaps/infobox-1.1.12.min.js',
                 'js/GoogleMaps/markerwithlabel-1.1.9.min.js']
         },
