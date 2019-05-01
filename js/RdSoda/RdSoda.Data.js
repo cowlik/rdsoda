@@ -31,8 +31,8 @@ RdSoda.Data = function (callback) {
             // begin gathering Instagram tag data
             data.Instagram.requestEndpointData('users/self/media/recent?' + instagramConfig.accessToken, onInstagramDataReady);
         } else {
-            RdSoda.Modal.setLabel('Update 06.2016: Instagram has changed their <a href="https://www.instagram.com/developer/" target="_blank">API platform</a>. ' +
-                'RdSoda will now serve as a proof-of-concept into the unforeseeable future. ' +
+            RdSoda.Modal.setLabel('Update 05.2019: Instagram has changed their <a href="https://www.instagram.com/developer/" target="_blank">API platform</a>. ' +
+                'RdSoda will serve as a prototype until non-business apps are fully supported again. ' +
                 'For viewing, <a href="mailto:hello@rdsoda.com">contact me</a> for an invite.<br><br>' +
                 '<a class="img-rounded" href="https://api.instagram.com/oauth/authorize/?client_id=' + instagramConfig.CLIENT_ID + '&redirect_uri=' + instagramConfig.REDIRECT_URI + '&response_type=token&scope=public_content">Log in to Instagram</a><br>');
         }
